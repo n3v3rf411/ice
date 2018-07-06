@@ -233,7 +233,7 @@ public class BasicDataManager extends DataFilePoller implements DataManager {
 	public Map<Tag, double[]> getData(Interval interval, TagLists tagLists,
 			TagType groupBy, AggregateType aggregate, boolean forReservation,
 			UsageUnit usageUnit) {
-		return getData(interval, tagLists, groupBy, aggregate, forReservation, usageUnit);
+		return getData(interval, tagLists, groupBy, aggregate, forReservation, usageUnit, 0);
 	}
 	
 }
