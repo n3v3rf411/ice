@@ -574,7 +574,7 @@ class DashboardController {
 		UsageUnit usageUnit = UsageUnit.Dollar;
 		if (!isCost) {
 			usageUnit = UsageUnit.Native;
-			if (!query.getString("usageUnit").isEmpty())
+			if (query.hasProperty("usageUnit") && !query.getString("usageUnit").isEmpty())
 				usageUnit = UsageUnit.valueOf(query.getString("usageUnit"));
 		}
         AggregateType aggregate = AggregateType.valueOf(query.getString("aggregate"));
