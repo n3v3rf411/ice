@@ -91,7 +91,7 @@ public class Product extends Tag {
     	// substitute "_" for spaces and make lower case
     	// This operation must be invertible, so we assume product
     	// names don't use underscore!
-    	fileName = getCanonicalName(this.name).replace(" ", "_");
+    	fileName = getCanonicalName(this.name).replace(" ", "__");
     }
 
     private static String canonicalName(String name) {
@@ -106,7 +106,7 @@ public class Product extends Tag {
     
     public static String getNameFromFileName(String fileName) {
     	// Invert the operation we did to create the short name
-    	return fileName.replace("_", " ");
+    	return fileName.replace("__", " ");
     }
     
     public static void addOverride(String canonical, String override) {

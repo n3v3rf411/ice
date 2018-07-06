@@ -2,9 +2,11 @@ package com.netflix.ice.basic;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import com.netflix.ice.common.LineItem;
 import com.netflix.ice.common.ProductService;
 import com.netflix.ice.common.ResourceService;
+import com.netflix.ice.reader.ReaderConfig;
 import com.netflix.ice.tag.Account;
 import com.netflix.ice.tag.Product;
 import com.netflix.ice.tag.Region;
@@ -16,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public class BasicResourceService extends ResourceService {
     private final static Logger logger = LoggerFactory.getLogger(BasicResourceService.class);
@@ -124,13 +127,18 @@ public class BasicResourceService extends ResourceService {
 
     @Override
     public List<List<Product>> getProductsWithResources() {
-        return productsWithResources;
-        
-//        List<List<Product>> result = Lists.newArrayList();
-//        for (Product product: ReaderConfig.getInstance().productService.getProducts()) {
-//            result.add(Lists.<Product>newArrayList(product));
-//        }
-//        return result;
+//        return productsWithResources;
+
+		final Set<Product> uniqueProducts = Sets.newHashSet();
+
+        List<List<Product>> result = Lists.newArrayList();
+        for (Product product: ReaderConfig.getInstance().productService.getProducts()) {
+        	if (!uniqueProducts.contains(product)) {
+				result.add(Lists.newArrayList(product));
+				uniqueProducts.add(product);
+			}
+        }
+        return result;
     }
 
     @Override
