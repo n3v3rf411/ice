@@ -1882,7 +1882,7 @@ function breakdownCtrl($scope, $location, $http, usage_db, highchart) {
 
   $scope.groupBys = [{ name: "ResourceGroup" }, { name: "ApplicationGroup" }];
   $scope.groupBy = $scope.groupBys[0];
-  $scope.consolidate = "weekly";
+  $scope.consolidate = "daily";
   $scope.end = new Date();
   $scope.end = highchart.dayFormat($scope.end); //$filter('date')($scope.end, "y-MM-dd hha");
   $scope.spans = 4;
