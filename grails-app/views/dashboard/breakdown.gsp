@@ -41,7 +41,6 @@
         <div style="padding-top: 00px">End: <input class="required" type="text" name="end" id="end" size="15"/></div>
         <div style="padding-top: 10px"># of Spans: <input class="required" type="text" name="spans" id="spans" size="8" ng-model="spans"/></div>
         <div style="padding-top: 10px">Aggregate: <select ng-model="consolidate">
-            <option>hourly</option>
             <option>daily</option>
             <option>weekly</option>
             <option>monthly</option>
