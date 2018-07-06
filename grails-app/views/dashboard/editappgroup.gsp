@@ -61,7 +61,7 @@
       <span ng-show="loading"><img src="${resource(dir: "/")}images/spinner.gif" border="0"></span>
       <button ng-show="!loading" ng-disabled="isDisabled()" type="submit" class="save" ng-click="save()"><div>Save</div></button>
       <button ng-show="!loading && !isCreate" type="submit" class="delete" ng-click="delete()"><div>Delete</div></button>
-      <a ng-show="!loading" class="restore" href="${resource(dir: 'dashboard', file: 'breakdown')}#appgroup" style="background-image: url(${resource(dir: '/')}images/tango/24/actions/edit-undo.png)">Cancel</a>
+      <a ng-show="!loading" class="restore" href="${resource(dir: 'dashboard', file: 'breakdown')}#groupBy=ApplicationGroup" style="background-image: url(${resource(dir: '/')}images/tango/24/actions/edit-undo.png)">Cancel</a>
     </div>
     </div>
 
